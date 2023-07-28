@@ -18,6 +18,9 @@ function App() {
       .catch((error) => console.error(error));
   }, []);
 
+  const countryCode = JSON.parse(JSON.stringify(data && data.country).toLowerCase());
+  const img = `https://flagcdn.com/16x12/${countryCode}.png`;
+
   return (
     <>
       <div>
@@ -29,7 +32,11 @@ function App() {
               <div>
                 <p>
                   City: {data.city}
-                  <span> - {data.country}</span>
+                  <span>
+                    {" "}
+                    - {data.country} &#20;
+                    <img src={img} alt="" />
+                  </span>
                 </p>
                 <p>IP Version: {data.version}</p>
                 <p>
