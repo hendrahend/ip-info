@@ -25,7 +25,23 @@ function App() {
         {data && (
           <div>
             <p>Your IP: {data.ip}</p>
-            {visible && <code>{JSON.stringify(data)}</code>}
+            {visible && (
+              <div>
+                <p>
+                  City: {data.city}
+                  <span> - {data.country}</span>
+                </p>
+                <p>IP Version: {data.version}</p>
+                <p>
+                  Latitude/Logitude: {data.latitude}
+                  <span>/{data.longitude}</span>
+                </p>
+                <p>Language: {data.languages}</p>
+                <p>Timezone: {data.timezone}</p>
+                <p>ASN: {data.asn}</p>
+                <p>Org: {data.org}</p>
+              </div>
+            )}
           </div>
         )}
         {loading && <p>Loading...</p>}
