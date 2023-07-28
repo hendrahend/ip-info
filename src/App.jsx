@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     fetch("https://ipapi.co/json")
@@ -20,9 +21,15 @@ function App() {
   return (
     <>
       <div>
-        <h2>Your IP is</h2>
+        <h2>IP Info</h2>
+        {data && (
+          <div>
+            <p>Your IP: {data.ip}</p>
+            {visible && <code>{JSON.stringify(data)}</code>}
+          </div>
+        )}
         {loading && <p>Loading...</p>}
-        {data && <p>{data.ip}</p>}
+        <button onClick={() => setVisible(!visible)}>{!visible ? "Show More" : "Show Less"}</button>
       </div>
     </>
   );
