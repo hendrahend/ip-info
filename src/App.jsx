@@ -40,7 +40,7 @@ function App() {
                 </p>
                 <p>IP Version: {data.version}</p>
                 <p>
-                  Latitude/Logitude: {data.latitude}
+                  Latitude/Longitude: {data.latitude}
                   <span>/{data.longitude}</span>
                 </p>
                 <p>Language: {data.languages}</p>
