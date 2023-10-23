@@ -1,6 +1,6 @@
 # IP Info
 A simple project using Vite + React
-## Installation
+## Getting Started
 
 1. Clone the repo
    ```sh
